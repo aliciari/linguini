@@ -558,7 +558,7 @@
             // Load saved game AFTER DOM is visible
             if (lastPlayed === today) {
                 // Same day - load saved game
-                setTimeout(() => loadSavedGame(), 50);
+                loadSavedGame();
             }
         }
 
@@ -822,38 +822,52 @@
 
         function loadSavedGame() {
             const saved = localStorage.getItem('linguini_game_state');
-            if (saved) {
-                const state = JSON.parse(saved);
-                gameState.attempts = state.attempts;
-                gameState.gameWon = state.gameWon;
-                gameState.gameLost = state.gameLost;
+            if (!saved) return;
+            
+            const state = JSON.parse(saved);
+            gameState.attempts = state.attempts;
+            gameState.gameWon = state.gameWon;
+            gameState.gameLost = state.gameLost;
 
-                updateEmojiTracker();
-                updateGuessHistory();
+            updateEmojiTracker();
+            updateGuessHistory();
 
-                if (state.gameWon || state.gameLost) {
-                    // Hide gameplay elements when loading completed game
-                    document.getElementById('guessInput').disabled = true;
-                    document.getElementById('submitButton').disabled = true;
-                    document.querySelector('.audio-section').style.display = 'none';
-                    document.querySelector('.input-section').style.display = 'none';
-                    document.querySelector('.attempts-label').style.display = 'none';
+            if (state.gameWon || state.gameLost) {
+                // Use requestAnimationFrame to ensure DOM is fully ready
+                requestAnimationFrame(() => {
+                    // Hide gameplay elements
+                    const audioSection = document.querySelector('.audio-section');
+                    const inputSection = document.querySelector('.input-section');
+                    const attemptsLabel = document.querySelector('.attempts-label');
+                    const guessInput = document.getElementById('guessInput');
+                    const submitButton = document.getElementById('submitButton');
+                    
+                    if (audioSection) audioSection.style.display = 'none';
+                    if (inputSection) inputSection.style.display = 'none';
+                    if (attemptsLabel) attemptsLabel.style.display = 'none';
+                    if (guessInput) guessInput.disabled = true;
+                    if (submitButton) submitButton.disabled = true;
                     
                     // Show result section
                     const resultSection = document.getElementById('resultSection');
+                    const resultEmoji = document.getElementById('resultEmoji');
+                    const resultTitle = document.getElementById('resultTitle');
+                    const resultLanguage = document.getElementById('resultLanguage');
                     
                     if (state.gameWon) {
-                        document.getElementById('resultEmoji').textContent = '🎉🎊';
-                        document.getElementById('resultTitle').textContent = 'Amazing!';
-                        document.getElementById('resultLanguage').textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
+                        if (resultEmoji) resultEmoji.textContent = '🎉🎊';
+                        if (resultTitle) resultTitle.textContent = 'Amazing!';
+                        if (resultLanguage) resultLanguage.textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
                     } else if (state.gameLost) {
-                        document.getElementById('resultEmoji').textContent = '🤔';
-                        document.getElementById('resultTitle').textContent = 'Nice try!';
-                        document.getElementById('resultLanguage').textContent = `The answer was ${gameState.todayLanguage.name}`;
+                        if (resultEmoji) resultEmoji.textContent = '🤔';
+                        if (resultTitle) resultTitle.textContent = 'Nice try!';
+                        if (resultLanguage) resultLanguage.textContent = `The answer was ${gameState.todayLanguage.name}`;
                     }
                     
-                    resultSection.classList.add('visible');
-                }
+                    if (resultSection) resultSection.classList.add('visible');
+                    
+                    console.log('Loaded saved game - elements hidden, results shown');
+                });
             }
         }
 
