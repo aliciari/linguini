@@ -523,25 +523,42 @@
 
             loadStats();
             
-            // Check if already played today
+            // Check if already played today BEFORE showing content
             const today = new Date().toISOString().split('T')[0];
             const lastPlayed = localStorage.getItem('linguini_last_played');
+            const savedGameState = localStorage.getItem('linguini_game_state');
             
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('gameContent').classList.remove('hidden');
-
-            setupEventListeners();
-            updateStatsDisplay();
-            
-            // Load saved game AFTER DOM is visible (small delay to ensure everything is rendered)
-            if (lastPlayed === today) {
-                // Same day - load saved game
-                setTimeout(() => loadSavedGame(), 100);
+            // If game was completed today, prepare to hide gameplay elements
+            let shouldHideGameplay = false;
+            if (lastPlayed === today && savedGameState) {
+                const state = JSON.parse(savedGameState);
+                if (state.gameWon || state.gameLost) {
+                    shouldHideGameplay = true;
+                }
             } else if (lastPlayed && lastPlayed !== today) {
                 // New day - clear old game state
                 localStorage.removeItem('linguini_game_state');
                 localStorage.removeItem('linguini_last_played');
                 console.log('New day! Starting fresh game.');
+            }
+            
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('gameContent').classList.remove('hidden');
+
+            // Hide gameplay elements immediately if game was completed
+            if (shouldHideGameplay) {
+                document.querySelector('.audio-section').style.display = 'none';
+                document.querySelector('.input-section').style.display = 'none';
+                document.querySelector('.attempts-label').style.display = 'none';
+            }
+
+            setupEventListeners();
+            updateStatsDisplay();
+            
+            // Load saved game AFTER DOM is visible
+            if (lastPlayed === today) {
+                // Same day - load saved game
+                setTimeout(() => loadSavedGame(), 50);
             }
         }
 
