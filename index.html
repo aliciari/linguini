@@ -527,21 +527,22 @@
             const today = new Date().toISOString().split('T')[0];
             const lastPlayed = localStorage.getItem('linguini_last_played');
             
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('gameContent').classList.remove('hidden');
+
+            setupEventListeners();
+            updateStatsDisplay();
+            
+            // Load saved game AFTER DOM is visible (small delay to ensure everything is rendered)
             if (lastPlayed === today) {
                 // Same day - load saved game
-                loadSavedGame();
+                setTimeout(() => loadSavedGame(), 100);
             } else if (lastPlayed && lastPlayed !== today) {
                 // New day - clear old game state
                 localStorage.removeItem('linguini_game_state');
                 localStorage.removeItem('linguini_last_played');
                 console.log('New day! Starting fresh game.');
             }
-
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('gameContent').classList.remove('hidden');
-
-            setupEventListeners();
-            updateStatsDisplay();
         }
 
         // Setup event listeners
