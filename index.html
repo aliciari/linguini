@@ -526,8 +526,15 @@
             // Check if already played today
             const today = new Date().toISOString().split('T')[0];
             const lastPlayed = localStorage.getItem('linguini_last_played');
+            
             if (lastPlayed === today) {
+                // Same day - load saved game
                 loadSavedGame();
+            } else if (lastPlayed && lastPlayed !== today) {
+                // New day - clear old game state
+                localStorage.removeItem('linguini_game_state');
+                localStorage.removeItem('linguini_last_played');
+                console.log('New day! Starting fresh game.');
             }
 
             document.getElementById('loading').classList.add('hidden');
@@ -709,8 +716,12 @@
             saveStats();
             updateStatsDisplay();
 
+            // Hide gameplay elements
             document.getElementById('guessInput').disabled = true;
             document.getElementById('submitButton').disabled = true;
+            document.querySelector('.audio-section').style.display = 'none';
+            document.querySelector('.input-section').style.display = 'none';
+            document.querySelector('.attempts-label').style.display = 'none';
 
             const resultSection = document.getElementById('resultSection');
             document.getElementById('resultEmoji').textContent = '🎉🎊';
@@ -727,8 +738,12 @@
             saveStats();
             updateStatsDisplay();
 
+            // Hide gameplay elements
             document.getElementById('guessInput').disabled = true;
             document.getElementById('submitButton').disabled = true;
+            document.querySelector('.audio-section').style.display = 'none';
+            document.querySelector('.input-section').style.display = 'none';
+            document.querySelector('.attempts-label').style.display = 'none';
 
             const resultSection = document.getElementById('resultSection');
             document.getElementById('resultEmoji').textContent = '🤔';
@@ -798,8 +813,28 @@
                 updateEmojiTracker();
                 updateGuessHistory();
 
-                if (state.gameWon) winGame();
-                else if (state.gameLost) loseGame();
+                if (state.gameWon || state.gameLost) {
+                    // Hide gameplay elements when loading completed game
+                    document.getElementById('guessInput').disabled = true;
+                    document.getElementById('submitButton').disabled = true;
+                    document.querySelector('.audio-section').style.display = 'none';
+                    document.querySelector('.input-section').style.display = 'none';
+                    document.querySelector('.attempts-label').style.display = 'none';
+                }
+
+                if (state.gameWon) {
+                    const resultSection = document.getElementById('resultSection');
+                    document.getElementById('resultEmoji').textContent = '🎉🎊';
+                    document.getElementById('resultTitle').textContent = 'Amazing!';
+                    document.getElementById('resultLanguage').textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
+                    resultSection.classList.add('visible');
+                } else if (state.gameLost) {
+                    const resultSection = document.getElementById('resultSection');
+                    document.getElementById('resultEmoji').textContent = '🤔';
+                    document.getElementById('resultTitle').textContent = 'Nice try!';
+                    document.getElementById('resultLanguage').textContent = `The answer was ${gameState.todayLanguage.name}`;
+                    resultSection.classList.add('visible');
+                }
             }
         }
 
