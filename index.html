@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguini - Daily Language Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 42px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .audio-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audio-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            cursor: pointer;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .play-button:active {
+            transform: scale(0.95);
+        }
+
+        .audio-text {
+            color: white;
+            margin-top: 15px;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emoji-tracker {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+
+        .emoji-slot {
+            width: 70px;
+            height: 70px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border: 3px solid #e9ecef;
+        }
+
+        .emoji-slot.filled {
+            background: white;
+            transform: scale(1.1);
+            border-color: #667eea;
+        }
+
+        .emoji-slot.correct {
+            background: linear-gradient(135deg, #48c774 0%, #3ec46d 100%);
+            animation: bounce 0.5s;
+        }
+
+        .emoji-slot.close {
+            background: linear-gradient(135deg, #ffdd57 0%, #ffc107 100%);
+            animation: bounce 0.5s;
+        }
+
+        .emoji-slot.wrong {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            animation: shake 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1.1); }
+            50% { transform: scale(1.3); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .attempts-label {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .guess-history {
+            margin-bottom: 25px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .guess-item {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guess-emoji {
+            font-size: 24px;
+        }
+
+        .guess-details {
+            flex: 1;
+        }
+
+        .guess-language {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .guess-feedback {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .input-section {
+            margin-bottom: 25px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .guess-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 3px solid #e9ecef;
+            border-radius: 12px;
+            outline: none;
+            transition: border-color 0.3s;
+            margin-bottom: 12px;
+        }
+
+        .guess-input:focus {
+            border-color: #667eea;
+        }
+
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            margin-top: -8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .autocomplete-dropdown.visible {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .autocomplete-item:hover {
+            background: #f8f9fa;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .submit-button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .result-section {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            display: none;
+            margin-top: 25px;
+        }
+
+        .result-section.visible {
+            display: block;
+            animation: slideIn 0.5s;
+        }
+
+        .result-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .result-language {
+            font-size: 20px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .result-emoji-display {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .share-button {
+            background: linear-gradient(135deg, #48c774 0%, #3ec46d 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(72, 199, 116, 0.4);
+        }
+
+        .share-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(72, 199, 116, 0.6);
+        }
+
+        .message-box {
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .message-box.visible {
+            display: block;
+            animation: slideIn 0.3s;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>🌍 Linguini</h1>
+            <p class="subtitle">Can you guess the language?</p>
+        </header>
+
+        <div class="loading" id="loading">
+            🎧 Loading today's challenge...
+        </div>
+
+        <div id="gameContent" class="hidden">
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-value" id="playedStat">0</div>
+                    <div class="stat-label">Played</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="winRateStat">0%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="streakStat">0</div>
+                    <div class="stat-label">Streak</div>
+                </div>
+            </div>
+
+            <div class="audio-section">
+                <button class="play-button" id="playButton">▶️</button>
+                <p class="audio-text">🎵 Listen to the mystery language</p>
+            </div>
+
+            <div class="attempts-label">Your attempts:</div>
+            <div class="emoji-tracker" id="emojiTracker">
+                <div class="emoji-slot">❓</div>
+                <div class="emoji-slot">❓</div>
+                <div class="emoji-slot">❓</div>
+                <div class="emoji-slot">❓</div>
+                <div class="emoji-slot">❓</div>
+            </div>
+
+            <div class="message-box" id="messageBox"></div>
+
+            <div class="guess-history" id="guessHistory"></div>
+
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        class="guess-input" 
+                        id="guessInput"
+                        placeholder="Type a language name..."
+                        autocomplete="off"
+                    >
+                    <div class="autocomplete-dropdown" id="autocompleteDropdown"></div>
+                </div>
+                <button class="submit-button" id="submitButton">Submit Guess</button>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="result-emoji-display" id="resultEmoji"></div>
+                <div class="result-title" id="resultTitle"></div>
+                <div class="result-language" id="resultLanguage"></div>
+                <button class="share-button" id="shareButton">📋 Share Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game configuration
+        const MAX_ATTEMPTS = 5;
+        const EMOJI_MAP = {
+            correct: '😄',  // Happy - correct answer
+            close: '😲',     // Surprised - close guess
+            wrong: '😢'      // Crying - wrong guess
+        };
+
+        // Game state
+        let gameState = {
+            languageData: [],
+            todayLanguage: null,
+            attempts: [],
+            gameWon: false,
+            gameLost: false,
+            audioFiles: [],
+            currentAudioIndex: 0
+        };
+
+        // Statistics
+        let stats = {
+            played: 0,
+            won: 0,
+            streak: 0
+        };
+
+        // Load language data
+        async function loadLanguageData() {
+            try {
+                const response = await fetch('language_data.json');
+                if (!response.ok) throw new Error('Failed to load');
+                return await response.json();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                showMessage('Error loading game. Please refresh.');
+                return null;
+            }
+        }
+
+        // Select daily language
+        function selectDailyLanguage(languages) {
+            const today = new Date().toISOString().split('T')[0];
+            const seed = parseInt(today.replace(/-/g, ''));
+            return languages[seed % languages.length];
+        }
+
+        // Initialize game
+        async function initGame() {
+            gameState.languageData = await loadLanguageData();
+            if (!gameState.languageData) return;
+
+            gameState.todayLanguage = selectDailyLanguage(gameState.languageData);
+            gameState.audioFiles = gameState.todayLanguage.audio_files;
+
+            loadStats();
+            
+            // Check if already played today
+            const today = new Date().toISOString().split('T')[0];
+            const lastPlayed = localStorage.getItem('linguini_last_played');
+            if (lastPlayed === today) {
+                loadSavedGame();
+            }
+
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('gameContent').classList.remove('hidden');
+
+            setupEventListeners();
+            updateStatsDisplay();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            document.getElementById('playButton').addEventListener('click', playAudio);
+            document.getElementById('submitButton').addEventListener('click', submitGuess);
+            document.getElementById('guessInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') submitGuess();
+            });
+            document.getElementById('guessInput').addEventListener('input', handleAutocomplete);
+            document.getElementById('shareButton').addEventListener('click', shareResults);
+        }
+
+        // Play audio
+        function playAudio() {
+            if (gameState.audioFiles.length === 0) return;
+            
+            const audioFile = gameState.audioFiles[gameState.currentAudioIndex];
+            const audio = new Audio(`audio_files/${audioFile.filename}`);
+            audio.play().catch(err => console.error('Audio error:', err));
+            
+            gameState.currentAudioIndex = (gameState.currentAudioIndex + 1) % gameState.audioFiles.length;
+        }
+
+        // Handle autocomplete
+        function handleAutocomplete(e) {
+            const input = e.target.value.toLowerCase();
+            const dropdown = document.getElementById('autocompleteDropdown');
+
+            if (input.length < 2) {
+                dropdown.classList.remove('visible');
+                return;
+            }
+
+            const matches = gameState.languageData
+                .filter(lang => lang.name.toLowerCase().includes(input))
+                .slice(0, 5);
+
+            if (matches.length === 0) {
+                dropdown.classList.remove('visible');
+                return;
+            }
+
+            dropdown.innerHTML = matches.map(lang => 
+                `<div class="autocomplete-item" data-name="${lang.name}">${lang.name}</div>`
+            ).join('');
+
+            dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.getElementById('guessInput').value = item.dataset.name;
+                    dropdown.classList.remove('visible');
+                });
+            });
+
+            dropdown.classList.add('visible');
+        }
+
+        // Submit guess
+        function submitGuess() {
+            if (gameState.gameWon || gameState.gameLost) return;
+
+            const input = document.getElementById('guessInput');
+            const guess = input.value.trim();
+
+            if (!guess) {
+                showMessage('Please enter a language name');
+                return;
+            }
+
+            const matchedLanguage = gameState.languageData.find(
+                lang => lang.name.toLowerCase() === guess.toLowerCase()
+            );
+
+            if (!matchedLanguage) {
+                showMessage('Language not found. Try again!');
+                return;
+            }
+
+            if (gameState.attempts.some(a => a.guess.toLowerCase() === guess.toLowerCase())) {
+                showMessage('You already guessed that!');
+                return;
+            }
+
+            // Process guess
+            const isCorrect = matchedLanguage.name === gameState.todayLanguage.name;
+            const distance = calculateDistance(
+                matchedLanguage.location[0], matchedLanguage.location[1],
+                gameState.todayLanguage.location[0], gameState.todayLanguage.location[1]
+            );
+
+            let emoji, feedback, category;
+            if (isCorrect) {
+                emoji = EMOJI_MAP.correct;
+                feedback = 'Perfect! You got it!';
+                category = 'correct';
+            } else if (distance < 2000) {
+                emoji = EMOJI_MAP.close;
+                feedback = 'Very close! Same region!';
+                category = 'close';
+            } else {
+                emoji = EMOJI_MAP.wrong;
+                feedback = distance < 5000 ? 'Same continent' : 'Different continent';
+                category = 'wrong';
+            }
+
+            gameState.attempts.push({
+                guess: matchedLanguage.name,
+                emoji: emoji,
+                feedback: feedback,
+                category: category
+            });
+
+            input.value = '';
+            document.getElementById('autocompleteDropdown').classList.remove('visible');
+
+            updateEmojiTracker();
+            updateGuessHistory();
+            saveGame();
+
+            if (isCorrect) {
+                winGame();
+            } else if (gameState.attempts.length >= MAX_ATTEMPTS) {
+                loseGame();
+            }
+        }
+
+        // Calculate distance
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                    Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
+        }
+
+        // Update emoji tracker
+        function updateEmojiTracker() {
+            const tracker = document.getElementById('emojiTracker');
+            const slots = tracker.querySelectorAll('.emoji-slot');
+            
+            gameState.attempts.forEach((attempt, index) => {
+                if (index < MAX_ATTEMPTS) {
+                    slots[index].textContent = attempt.emoji;
+                    slots[index].classList.add('filled', attempt.category);
+                }
+            });
+        }
+
+        // Update guess history
+        function updateGuessHistory() {
+            const history = document.getElementById('guessHistory');
+            history.innerHTML = gameState.attempts.map(attempt => `
+                <div class="guess-item">
+                    <div class="guess-emoji">${attempt.emoji}</div>
+                    <div class="guess-details">
+                        <div class="guess-language">${attempt.guess}</div>
+                        <div class="guess-feedback">${attempt.feedback}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Win game
+        function winGame() {
+            gameState.gameWon = true;
+            stats.played++;
+            stats.won++;
+            stats.streak++;
+            saveStats();
+            updateStatsDisplay();
+
+            document.getElementById('guessInput').disabled = true;
+            document.getElementById('submitButton').disabled = true;
+
+            const resultSection = document.getElementById('resultSection');
+            document.getElementById('resultEmoji').textContent = '🎉🎊';
+            document.getElementById('resultTitle').textContent = 'Amazing!';
+            document.getElementById('resultLanguage').textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
+            resultSection.classList.add('visible');
+        }
+
+        // Lose game
+        function loseGame() {
+            gameState.gameLost = true;
+            stats.played++;
+            stats.streak = 0;
+            saveStats();
+            updateStatsDisplay();
+
+            document.getElementById('guessInput').disabled = true;
+            document.getElementById('submitButton').disabled = true;
+
+            const resultSection = document.getElementById('resultSection');
+            document.getElementById('resultEmoji').textContent = '🤔';
+            document.getElementById('resultTitle').textContent = 'Nice try!';
+            document.getElementById('resultLanguage').textContent = `The answer was ${gameState.todayLanguage.name}`;
+            resultSection.classList.add('visible');
+        }
+
+        // Share results
+        function shareResults() {
+            const emojis = gameState.attempts.map(a => a.emoji).join('');
+            const result = gameState.gameWon ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
+            const text = `Linguini 🌍\n${result}\n${emojis}`;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+                showMessage('Copied to clipboard!');
+            } else {
+                alert(text);
+            }
+        }
+
+        // Show message
+        function showMessage(text) {
+            const box = document.getElementById('messageBox');
+            box.textContent = text;
+            box.classList.add('visible');
+            setTimeout(() => box.classList.remove('visible'), 3000);
+        }
+
+        // Load/save stats
+        function loadStats() {
+            const saved = localStorage.getItem('linguini_stats');
+            if (saved) stats = JSON.parse(saved);
+        }
+
+        function saveStats() {
+            localStorage.setItem('linguini_stats', JSON.stringify(stats));
+        }
+
+        function updateStatsDisplay() {
+            document.getElementById('playedStat').textContent = stats.played;
+            document.getElementById('winRateStat').textContent = 
+                stats.played > 0 ? Math.round((stats.won / stats.played) * 100) + '%' : '0%';
+            document.getElementById('streakStat').textContent = stats.streak;
+        }
+
+        // Save/load game
+        function saveGame() {
+            const today = new Date().toISOString().split('T')[0];
+            localStorage.setItem('linguini_last_played', today);
+            localStorage.setItem('linguini_game_state', JSON.stringify({
+                attempts: gameState.attempts,
+                gameWon: gameState.gameWon,
+                gameLost: gameState.gameLost
+            }));
+        }
+
+        function loadSavedGame() {
+            const saved = localStorage.getItem('linguini_game_state');
+            if (saved) {
+                const state = JSON.parse(saved);
+                gameState.attempts = state.attempts;
+                gameState.gameWon = state.gameWon;
+                gameState.gameLost = state.gameLost;
+
+                updateEmojiTracker();
+                updateGuessHistory();
+
+                if (state.gameWon) winGame();
+                else if (state.gameLost) loseGame();
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', initGame);
+    </script>
+</body>
+</html>

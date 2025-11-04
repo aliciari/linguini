@@ -1,0 +1,1260 @@
+[
+  {
+    "name": "Mandarin Chinese",
+    "code": "cmn-CN",
+    "location": [
+      39.9042,
+      116.4074
+    ],
+    "audio_files": [
+      {
+        "filename": "Mandarin_Chinese_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "欢迎来到我们美丽的国家，这里古老的传统与现代生活相遇。"
+      },
+      {
+        "filename": "Mandarin_Chinese_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "欢迎来到我们美丽的国家，这里古老的传统与现代生活相遇。"
+      },
+      {
+        "filename": "Mandarin_Chinese_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "今天天气很好，人们正在外面享受时光。"
+      },
+      {
+        "filename": "Mandarin_Chinese_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "今天天气很好，人们正在外面享受时光。"
+      }
+    ]
+  },
+  {
+    "name": "Spanish",
+    "code": "es-ES",
+    "location": [
+      40.4168,
+      -3.7038
+    ],
+    "audio_files": [
+      {
+        "filename": "Spanish_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Bienvenido a nuestro hermoso país, donde las tradiciones antiguas se encuentran con la vida moderna."
+      },
+      {
+        "filename": "Spanish_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Bienvenido a nuestro hermoso país, donde las tradiciones antiguas se encuentran con la vida moderna."
+      },
+      {
+        "filename": "Spanish_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "El clima es encantador hoy, y la gente está disfrutando su tiempo afuera."
+      },
+      {
+        "filename": "Spanish_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "El clima es encantador hoy, y la gente está disfrutando su tiempo afuera."
+      }
+    ]
+  },
+  {
+    "name": "English",
+    "code": "en-US",
+    "location": [
+      38.9072,
+      -77.0369
+    ],
+    "audio_files": [
+      {
+        "filename": "English_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Welcome to our beautiful country, where ancient traditions meet modern life."
+      },
+      {
+        "filename": "English_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Welcome to our beautiful country, where ancient traditions meet modern life."
+      },
+      {
+        "filename": "English_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "The weather is lovely today, and people are enjoying their time outside."
+      },
+      {
+        "filename": "English_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "The weather is lovely today, and people are enjoying their time outside."
+      }
+    ]
+  },
+  {
+    "name": "Hindi",
+    "code": "hi-IN",
+    "location": [
+      28.6139,
+      77.209
+    ],
+    "audio_files": [
+      {
+        "filename": "Hindi_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "हमारे सुंदर देश में आपका स्वागत है, जहां प्राचीन परंपराएं आधुनिक जीवन से मिलती हैं।"
+      },
+      {
+        "filename": "Hindi_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "हमारे सुंदर देश में आपका स्वागत है, जहां प्राचीन परंपराएं आधुनिक जीवन से मिलती हैं।"
+      },
+      {
+        "filename": "Hindi_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "आज मौसम सुहावना है, और लोग बाहर अपना समय बिता रहे हैं।"
+      },
+      {
+        "filename": "Hindi_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "आज मौसम सुहावना है, और लोग बाहर अपना समय बिता रहे हैं।"
+      }
+    ]
+  },
+  {
+    "name": "Bengali",
+    "code": "bn-IN",
+    "location": [
+      22.5726,
+      88.3639
+    ],
+    "audio_files": [
+      {
+        "filename": "Bengali_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "আমাদের সুন্দর দেশে স্বাগতম, যেখানে প্রাচীন ঐতিহ্য আধুনিক জীবনের সাথে মিলিত হয়।"
+      },
+      {
+        "filename": "Bengali_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "আমাদের সুন্দর দেশে স্বাগতম, যেখানে প্রাচীন ঐতিহ্য আধুনিক জীবনের সাথে মিলিত হয়।"
+      },
+      {
+        "filename": "Bengali_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "আজ আবহাওয়া সুন্দর, এবং মানুষ বাইরে তাদের সময় উপভোগ করছে।"
+      },
+      {
+        "filename": "Bengali_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "আজ আবহাওয়া সুন্দর, এবং মানুষ বাইরে তাদের সময় উপভোগ করছে।"
+      }
+    ]
+  },
+  {
+    "name": "Portuguese",
+    "code": "pt-BR",
+    "location": [
+      -15.7975,
+      -47.8919
+    ],
+    "audio_files": [
+      {
+        "filename": "Portuguese_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Bem-vindo ao nosso lindo país, onde tradições antigas encontram a vida moderna."
+      },
+      {
+        "filename": "Portuguese_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Bem-vindo ao nosso lindo país, onde tradições antigas encontram a vida moderna."
+      },
+      {
+        "filename": "Portuguese_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "O clima está lindo hoje, e as pessoas estão aproveitando o tempo lá fora."
+      },
+      {
+        "filename": "Portuguese_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "O clima está lindo hoje, e as pessoas estão aproveitando o tempo lá fora."
+      }
+    ]
+  },
+  {
+    "name": "Russian",
+    "code": "ru-RU",
+    "location": [
+      55.7558,
+      37.6173
+    ],
+    "audio_files": [
+      {
+        "filename": "Russian_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Добро пожаловать в нашу прекрасную страну, где древние традиции встречаются с современной жизнью."
+      },
+      {
+        "filename": "Russian_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Добро пожаловать в нашу прекрасную страну, где древние традиции встречаются с современной жизнью."
+      },
+      {
+        "filename": "Russian_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Сегодня прекрасная погода, и люди наслаждаются временем на улице."
+      },
+      {
+        "filename": "Russian_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Сегодня прекрасная погода, и люди наслаждаются временем на улице."
+      }
+    ]
+  },
+  {
+    "name": "Japanese",
+    "code": "ja-JP",
+    "location": [
+      35.6762,
+      139.6503
+    ],
+    "audio_files": [
+      {
+        "filename": "Japanese_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "古い伝統と現代生活が出会う美しい国へようこそ。"
+      },
+      {
+        "filename": "Japanese_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "古い伝統と現代生活が出会う美しい国へようこそ。"
+      },
+      {
+        "filename": "Japanese_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "今日は天気が良く、人々は外で時間を楽しんでいます。"
+      },
+      {
+        "filename": "Japanese_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "今日は天気が良く、人々は外で時間を楽しんでいます。"
+      }
+    ]
+  },
+  {
+    "name": "Punjabi",
+    "code": "pa-IN",
+    "location": [
+      30.7333,
+      76.7794
+    ],
+    "audio_files": [
+      {
+        "filename": "Punjabi_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "ਸਾਡੇ ਸੁੰਦਰ ਦੇਸ਼ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ, ਜਿੱਥੇ ਪ੍ਰਾਚੀਨ ਪਰੰਪਰਾਵਾਂ ਆਧੁਨਿਕ ਜੀਵਨ ਨਾਲ ਮਿਲਦੀਆਂ ਹਨ।"
+      },
+      {
+        "filename": "Punjabi_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "ਸਾਡੇ ਸੁੰਦਰ ਦੇਸ਼ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ, ਜਿੱਥੇ ਪ੍ਰਾਚੀਨ ਪਰੰਪਰਾਵਾਂ ਆਧੁਨਿਕ ਜੀਵਨ ਨਾਲ ਮਿਲਦੀਆਂ ਹਨ।"
+      },
+      {
+        "filename": "Punjabi_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "ਅੱਜ ਮੌਸਮ ਬਹੁਤ ਵਧੀਆ ਹੈ, ਅਤੇ ਲੋਕ ਬਾਹਰ ਆਪਣਾ ਸਮਾਂ ਮਾਣ ਰਹੇ ਹਨ।"
+      },
+      {
+        "filename": "Punjabi_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "ਅੱਜ ਮੌਸਮ ਬਹੁਤ ਵਧੀਆ ਹੈ, ਅਤੇ ਲੋਕ ਬਾਹਰ ਆਪਣਾ ਸਮਾਂ ਮਾਣ ਰਹੇ ਹਨ।"
+      }
+    ]
+  },
+  {
+    "name": "German",
+    "code": "de-DE",
+    "location": [
+      52.52,
+      13.405
+    ],
+    "audio_files": [
+      {
+        "filename": "German_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Willkommen in unserem schönen Land, wo alte Traditionen auf modernes Leben treffen."
+      },
+      {
+        "filename": "German_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Willkommen in unserem schönen Land, wo alte Traditionen auf modernes Leben treffen."
+      },
+      {
+        "filename": "German_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Das Wetter ist heute herrlich, und die Leute genießen ihre Zeit draußen."
+      },
+      {
+        "filename": "German_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Das Wetter ist heute herrlich, und die Leute genießen ihre Zeit draußen."
+      }
+    ]
+  },
+  {
+    "name": "Wu Chinese",
+    "code": "cmn-CN",
+    "location": [
+      31.2304,
+      121.4737
+    ],
+    "audio_files": [
+      {
+        "filename": "Wu_Chinese_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "欢迎来到我们美丽的国家，这里古老的传统与现代生活相遇。"
+      },
+      {
+        "filename": "Wu_Chinese_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "欢迎来到我们美丽的国家，这里古老的传统与现代生活相遇。"
+      },
+      {
+        "filename": "Wu_Chinese_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "今天天气很好，人们正在外面享受时光。"
+      },
+      {
+        "filename": "Wu_Chinese_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "今天天气很好，人们正在外面享受时光。"
+      }
+    ]
+  },
+  {
+    "name": "Malay",
+    "code": "ms-MY",
+    "location": [
+      3.139,
+      101.6869
+    ],
+    "audio_files": [
+      {
+        "filename": "Malay_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Selamat datang ke negara kami yang indah, di mana tradisi purba bertemu dengan kehidupan moden."
+      },
+      {
+        "filename": "Malay_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Selamat datang ke negara kami yang indah, di mana tradisi purba bertemu dengan kehidupan moden."
+      },
+      {
+        "filename": "Malay_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Cuaca hari ini sangat menyenangkan, dan orang ramai menikmati masa mereka di luar."
+      },
+      {
+        "filename": "Malay_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Cuaca hari ini sangat menyenangkan, dan orang ramai menikmati masa mereka di luar."
+      }
+    ]
+  },
+  {
+    "name": "Telugu",
+    "code": "te-IN",
+    "location": [
+      17.385,
+      78.4867
+    ],
+    "audio_files": [
+      {
+        "filename": "Telugu_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "మా అందమైన దేశానికి స్వాగతం, ఇక్కడ పురాతన సంప్రదాయాలు ఆధునిక జీవితంతో కలుస్తాయి।"
+      },
+      {
+        "filename": "Telugu_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "మా అందమైన దేశానికి స్వాగతం, ఇక్కడ పురాతన సంప్రదాయాలు ఆధునిక జీవితంతో కలుస్తాయి।"
+      },
+      {
+        "filename": "Telugu_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "ఈరోజు వాతావరణం చాలా బాగుంది, మరియు ప్రజలు బయట తమ సమయాన్ని ఆనందిస్తున్నారు।"
+      },
+      {
+        "filename": "Telugu_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "ఈరోజు వాతావరణం చాలా బాగుంది, మరియు ప్రజలు బయట తమ సమయాన్ని ఆనందిస్తున్నారు।"
+      }
+    ]
+  },
+  {
+    "name": "Vietnamese",
+    "code": "vi-VN",
+    "location": [
+      21.0285,
+      105.8542
+    ],
+    "audio_files": [
+      {
+        "filename": "Vietnamese_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Chào mừng đến với đất nước xinh đẹp của chúng tôi, nơi truyền thống cổ xưa gặp gỡ cuộc sống hiện đại."
+      },
+      {
+        "filename": "Vietnamese_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Chào mừng đến với đất nước xinh đẹp của chúng tôi, nơi truyền thống cổ xưa gặp gỡ cuộc sống hiện đại."
+      },
+      {
+        "filename": "Vietnamese_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Thời tiết hôm nay thật đẹp, và mọi người đang tận hưởng thời gian bên ngoài."
+      },
+      {
+        "filename": "Vietnamese_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Thời tiết hôm nay thật đẹp, và mọi người đang tận hưởng thời gian bên ngoài."
+      }
+    ]
+  },
+  {
+    "name": "Korean",
+    "code": "ko-KR",
+    "location": [
+      37.5665,
+      126.978
+    ],
+    "audio_files": [
+      {
+        "filename": "Korean_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "고대 전통과 현대 생활이 만나는 아름다운 우리나라에 오신 것을 환영합니다."
+      },
+      {
+        "filename": "Korean_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "고대 전통과 현대 생활이 만나는 아름다운 우리나라에 오신 것을 환영합니다."
+      },
+      {
+        "filename": "Korean_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "오늘 날씨가 좋아서 사람들이 밖에서 시간을 즐기고 있습니다."
+      },
+      {
+        "filename": "Korean_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "오늘 날씨가 좋아서 사람들이 밖에서 시간을 즐기고 있습니다."
+      }
+    ]
+  },
+  {
+    "name": "French",
+    "code": "fr-FR",
+    "location": [
+      48.8566,
+      2.3522
+    ],
+    "audio_files": [
+      {
+        "filename": "French_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Bienvenue dans notre beau pays, où les traditions anciennes rencontrent la vie moderne."
+      },
+      {
+        "filename": "French_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Bienvenue dans notre beau pays, où les traditions anciennes rencontrent la vie moderne."
+      },
+      {
+        "filename": "French_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Le temps est magnifique aujourd'hui, et les gens profitent de leur temps dehors."
+      },
+      {
+        "filename": "French_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Le temps est magnifique aujourd'hui, et les gens profitent de leur temps dehors."
+      }
+    ]
+  },
+  {
+    "name": "Marathi",
+    "code": "mr-IN",
+    "location": [
+      19.076,
+      72.8777
+    ],
+    "audio_files": [
+      {
+        "filename": "Marathi_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "आमच्या सुंदर देशात आपले स्वागत आहे, जिथे प्राचीन परंपरा आधुनिक जीवनाशी भेटतात."
+      },
+      {
+        "filename": "Marathi_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "आमच्या सुंदर देशात आपले स्वागत आहे, जिथे प्राचीन परंपरा आधुनिक जीवनाशी भेटतात."
+      },
+      {
+        "filename": "Marathi_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "आज हवामान खूप छान आहे, आणि लोक बाहेर त्यांचा वेळ घालवत आहेत."
+      },
+      {
+        "filename": "Marathi_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "आज हवामान खूप छान आहे, आणि लोक बाहेर त्यांचा वेळ घालवत आहेत."
+      }
+    ]
+  },
+  {
+    "name": "Tamil",
+    "code": "ta-IN",
+    "location": [
+      13.0827,
+      80.2707
+    ],
+    "audio_files": [
+      {
+        "filename": "Tamil_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "பழமையான பாரம்பரியங்கள் நவீன வாழ்க்கையை சந்திக்கும் எங்கள் அழகான நாட்டிற்கு வரவேற்கிறோம்."
+      },
+      {
+        "filename": "Tamil_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "பழமையான பாரம்பரியங்கள் நவீன வாழ்க்கையை சந்திக்கும் எங்கள் அழகான நாட்டிற்கு வரவேற்கிறோம்."
+      },
+      {
+        "filename": "Tamil_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "இன்று வானிலை மிகவும் இனிமையானது, மக்கள் வெளியில் தங்கள் நேரத்தை அனுபவித்து வருகின்றனர்."
+      },
+      {
+        "filename": "Tamil_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "இன்று வானிலை மிகவும் இனிமையானது, மக்கள் வெளியில் தங்கள் நேரத்தை அனுபவித்து வருகின்றனர்."
+      }
+    ]
+  },
+  {
+    "name": "Turkish",
+    "code": "tr-TR",
+    "location": [
+      39.9334,
+      32.8597
+    ],
+    "audio_files": [
+      {
+        "filename": "Turkish_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Eski geleneklerin modern hayatla buluştuğu güzel ülkemize hoş geldiniz."
+      },
+      {
+        "filename": "Turkish_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Eski geleneklerin modern hayatla buluştuğu güzel ülkemize hoş geldiniz."
+      },
+      {
+        "filename": "Turkish_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Bugün hava çok güzel ve insanlar dışarıda vakit geçiriyor."
+      },
+      {
+        "filename": "Turkish_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Bugün hava çok güzel ve insanlar dışarıda vakit geçiriyor."
+      }
+    ]
+  },
+  {
+    "name": "Urdu",
+    "code": "ur-IN",
+    "location": [
+      28.6139,
+      77.209
+    ],
+    "audio_files": [
+      {
+        "filename": "Urdu_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "ہمارے خوبصورت ملک میں خوش آمدید، جہاں قدیم روایات جدید زندگی سے ملتی ہیں۔"
+      },
+      {
+        "filename": "Urdu_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "ہمارے خوبصورت ملک میں خوش آمدید، جہاں قدیم روایات جدید زندگی سے ملتی ہیں۔"
+      },
+      {
+        "filename": "Urdu_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "آج موسم بہت خوشگوار ہے، اور لوگ باہر اپنا وقت گزار رہے ہیں۔"
+      },
+      {
+        "filename": "Urdu_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "آج موسم بہت خوشگوار ہے، اور لوگ باہر اپنا وقت گزار رہے ہیں۔"
+      }
+    ]
+  },
+  {
+    "name": "Gujarati",
+    "code": "gu-IN",
+    "location": [
+      23.0225,
+      72.5714
+    ],
+    "audio_files": [
+      {
+        "filename": "Gujarati_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "અમારા સુંદર દેશમાં આપનું સ્વાગત છે, જ્યાં પ્રાચીન પરંપરાઓ આધુનિક જીવન સાથે મળે છે."
+      },
+      {
+        "filename": "Gujarati_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "અમારા સુંદર દેશમાં આપનું સ્વાગત છે, જ્યાં પ્રાચીન પરંપરાઓ આધુનિક જીવન સાથે મળે છે."
+      },
+      {
+        "filename": "Gujarati_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "આજે હવામાન ખૂબ સરસ છે, અને લોકો બહાર તેમનો સમય માણી રહ્યા છે."
+      },
+      {
+        "filename": "Gujarati_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "આજે હવામાન ખૂબ સરસ છે, અને લોકો બહાર તેમનો સમય માણી રહ્યા છે."
+      }
+    ]
+  },
+  {
+    "name": "Polish",
+    "code": "pl-PL",
+    "location": [
+      52.2297,
+      21.0122
+    ],
+    "audio_files": [
+      {
+        "filename": "Polish_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Witamy w naszym pięknym kraju, gdzie starożytne tradycje spotykają się z nowoczesnym życiem."
+      },
+      {
+        "filename": "Polish_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Witamy w naszym pięknym kraju, gdzie starożytne tradycje spotykają się z nowoczesnym życiem."
+      },
+      {
+        "filename": "Polish_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Dziś pogoda jest cudowna, a ludzie cieszą się czasem na zewnątrz."
+      },
+      {
+        "filename": "Polish_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Dziś pogoda jest cudowna, a ludzie cieszą się czasem na zewnątrz."
+      }
+    ]
+  },
+  {
+    "name": "Ukrainian",
+    "code": "uk-UA",
+    "location": [
+      50.4501,
+      30.5234
+    ],
+    "audio_files": [
+      {
+        "filename": "Ukrainian_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Ласкаво просимо до нашої прекрасної країни, де давні традиції зустрічаються з сучасним життям."
+      },
+      {
+        "filename": "Ukrainian_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Ласкаво просимо до нашої прекрасної країни, де давні традиції зустрічаються з сучасним життям."
+      },
+      {
+        "filename": "Ukrainian_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Сьогодні чудова погода, і люди насолоджуються часом на вулиці."
+      },
+      {
+        "filename": "Ukrainian_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Сьогодні чудова погода, і люди насолоджуються часом на вулиці."
+      }
+    ]
+  },
+  {
+    "name": "Kannada",
+    "code": "kn-IN",
+    "location": [
+      12.9716,
+      77.5946
+    ],
+    "audio_files": [
+      {
+        "filename": "Kannada_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "ಪ್ರಾಚೀನ ಸಂಪ್ರದಾಯಗಳು ಆಧುನಿಕ ಜೀವನವನ್ನು ಭೇಟಿಯಾಗುವ ನಮ್ಮ ಸುಂದರ ದೇಶಕ್ಕೆ ಸುಸ್ವಾಗತ."
+      },
+      {
+        "filename": "Kannada_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "ಪ್ರಾಚೀನ ಸಂಪ್ರದಾಯಗಳು ಆಧುನಿಕ ಜೀವನವನ್ನು ಭೇಟಿಯಾಗುವ ನಮ್ಮ ಸುಂದರ ದೇಶಕ್ಕೆ ಸುಸ್ವಾಗತ."
+      },
+      {
+        "filename": "Kannada_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "ಇಂದು ಹವಾಮಾನ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ, ಮತ್ತು ಜನರು ಹೊರಗೆ ತಮ್ಮ ಸಮಯವನ್ನು ಆನಂದಿಸುತ್ತಿದ್ದಾರೆ."
+      },
+      {
+        "filename": "Kannada_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "ಇಂದು ಹವಾಮಾನ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ, ಮತ್ತು ಜನರು ಹೊರಗೆ ತಮ್ಮ ಸಮಯವನ್ನು ಆನಂದಿಸುತ್ತಿದ್ದಾರೆ."
+      }
+    ]
+  },
+  {
+    "name": "Malayalam",
+    "code": "ml-IN",
+    "location": [
+      8.5241,
+      76.9366
+    ],
+    "audio_files": [
+      {
+        "filename": "Malayalam_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "പുരാതന പാരമ്പര്യങ്ങൾ ആധുനിക ജീവിതവുമായി കണ്ടുമുട്ടുന്ന ഞങ്ങളുടെ മനോഹരമായ രാജ്യത്തേക്ക് സ്വാഗതം."
+      },
+      {
+        "filename": "Malayalam_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "പുരാതന പാരമ്പര്യങ്ങൾ ആധുനിക ജീവിതവുമായി കണ്ടുമുട്ടുന്ന ഞങ്ങളുടെ മനോഹരമായ രാജ്യത്തേക്ക് സ്വാഗതം."
+      },
+      {
+        "filename": "Malayalam_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "ഇന്ന് കാലാവസ്ഥ വളരെ മനോഹരമാണ്, ആളുകൾ പുറത്ത് സമയം ആസ്വദിക്കുന്നു."
+      },
+      {
+        "filename": "Malayalam_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "ഇന്ന് കാലാവസ്ഥ വളരെ മനോഹരമാണ്, ആളുകൾ പുറത്ത് സമയം ആസ്വദിക്കുന്നു."
+      }
+    ]
+  },
+  {
+    "name": "Italian",
+    "code": "it-IT",
+    "location": [
+      41.9028,
+      12.4964
+    ],
+    "audio_files": [
+      {
+        "filename": "Italian_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Benvenuti nel nostro bellissimo paese, dove le antiche tradizioni incontrano la vita moderna."
+      },
+      {
+        "filename": "Italian_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Benvenuti nel nostro bellissimo paese, dove le antiche tradizioni incontrano la vita moderna."
+      },
+      {
+        "filename": "Italian_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Il tempo è incantevole oggi, e la gente si sta godendo il tempo all'aperto."
+      },
+      {
+        "filename": "Italian_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Il tempo è incantevole oggi, e la gente si sta godendo il tempo all'aperto."
+      }
+    ]
+  },
+  {
+    "name": "Romanian",
+    "code": "ro-RO",
+    "location": [
+      44.4268,
+      26.1025
+    ],
+    "audio_files": [
+      {
+        "filename": "Romanian_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Bine ați venit în frumoasa noastră țară, unde tradițiile antice se întâlnesc cu viața modernă."
+      },
+      {
+        "filename": "Romanian_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Bine ați venit în frumoasa noastră țară, unde tradițiile antice se întâlnesc cu viața modernă."
+      },
+      {
+        "filename": "Romanian_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Vremea este minunată astăzi, iar oamenii se bucură de timpul petrecut afară."
+      },
+      {
+        "filename": "Romanian_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Vremea este minunată astăzi, iar oamenii se bucură de timpul petrecut afară."
+      }
+    ]
+  },
+  {
+    "name": "Thai",
+    "code": "th-TH",
+    "location": [
+      13.7563,
+      100.5018
+    ],
+    "audio_files": [
+      {
+        "filename": "Thai_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "ยินดีต้อนรับสู่ประเทศที่สวยงามของเรา ที่ซึ่งประเพณีโบราณพบกับชีวิตสมัยใหม่"
+      },
+      {
+        "filename": "Thai_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "ยินดีต้อนรับสู่ประเทศที่สวยงามของเรา ที่ซึ่งประเพณีโบราณพบกับชีวิตสมัยใหม่"
+      },
+      {
+        "filename": "Thai_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "วันนี้อากาศดีมาก และผู้คนกำลังเพลิดเพลินกับเวลาข้างนอก"
+      },
+      {
+        "filename": "Thai_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "วันนี้อากาศดีมาก และผู้คนกำลังเพลิดเพลินกับเวลาข้างนอก"
+      }
+    ]
+  },
+  {
+    "name": "Dutch",
+    "code": "nl-NL",
+    "location": [
+      52.3676,
+      4.9041
+    ],
+    "audio_files": [
+      {
+        "filename": "Dutch_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Welkom in ons prachtige land, waar oude tradities samenkomen met het moderne leven."
+      },
+      {
+        "filename": "Dutch_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Welkom in ons prachtige land, waar oude tradities samenkomen met het moderne leven."
+      },
+      {
+        "filename": "Dutch_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Het weer is heerlijk vandaag, en mensen genieten van hun tijd buiten."
+      },
+      {
+        "filename": "Dutch_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Het weer is heerlijk vandaag, en mensen genieten van hun tijd buiten."
+      }
+    ]
+  },
+  {
+    "name": "Greek",
+    "code": "el-GR",
+    "location": [
+      37.9838,
+      23.7275
+    ],
+    "audio_files": [
+      {
+        "filename": "Greek_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Καλώς ήρθατε στην όμορφη χώρα μας, όπου οι αρχαίες παραδόσεις συναντούν τη σύγχρονη ζωή."
+      },
+      {
+        "filename": "Greek_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Καλώς ήρθατε στην όμορφη χώρα μας, όπου οι αρχαίες παραδόσεις συναντούν τη σύγχρονη ζωή."
+      },
+      {
+        "filename": "Greek_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Ο καιρός είναι υπέροχος σήμερα και οι άνθρωποι απολαμβάνουν τον χρόνο τους έξω."
+      },
+      {
+        "filename": "Greek_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Ο καιρός είναι υπέροχος σήμερα και οι άνθρωποι απολαμβάνουν τον χρόνο τους έξω."
+      }
+    ]
+  },
+  {
+    "name": "Czech",
+    "code": "cs-CZ",
+    "location": [
+      50.0755,
+      14.4378
+    ],
+    "audio_files": [
+      {
+        "filename": "Czech_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Vítejte v naší krásné zemi, kde se starověké tradice setkávají s moderním životem."
+      },
+      {
+        "filename": "Czech_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Vítejte v naší krásné zemi, kde se starověké tradice setkávají s moderním životem."
+      },
+      {
+        "filename": "Czech_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Počasí je dnes nádherné a lidé si užívají čas venku."
+      },
+      {
+        "filename": "Czech_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Počasí je dnes nádherné a lidé si užívají čas venku."
+      }
+    ]
+  },
+  {
+    "name": "Swedish",
+    "code": "sv-SE",
+    "location": [
+      59.3293,
+      18.0686
+    ],
+    "audio_files": [
+      {
+        "filename": "Swedish_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Välkommen till vårt vackra land, där gamla traditioner möter modernt liv."
+      },
+      {
+        "filename": "Swedish_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Välkommen till vårt vackra land, där gamla traditioner möter modernt liv."
+      },
+      {
+        "filename": "Swedish_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Vädret är härligt idag, och människor njuter av sin tid utomhus."
+      },
+      {
+        "filename": "Swedish_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Vädret är härligt idag, och människor njuter av sin tid utomhus."
+      }
+    ]
+  },
+  {
+    "name": "Hungarian",
+    "code": "hu-HU",
+    "location": [
+      47.4979,
+      19.0402
+    ],
+    "audio_files": [
+      {
+        "filename": "Hungarian_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Üdvözöljük gyönyörű országunkban, ahol az ősi hagyományok találkoznak a modern élettel."
+      },
+      {
+        "filename": "Hungarian_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Üdvözöljük gyönyörű országunkban, ahol az ősi hagyományok találkoznak a modern élettel."
+      },
+      {
+        "filename": "Hungarian_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Ma csodálatos az idő, és az emberek élvezik az időt a szabadban."
+      },
+      {
+        "filename": "Hungarian_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Ma csodálatos az idő, és az emberek élvezik az időt a szabadban."
+      }
+    ]
+  },
+  {
+    "name": "Swahili",
+    "code": "sw-KE",
+    "location": [
+      -1.2864,
+      36.8172
+    ],
+    "audio_files": [
+      {
+        "filename": "Swahili_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Karibu nchi yetu nzuri, ambapo mila za kale zinakutana na maisha ya kisasa."
+      },
+      {
+        "filename": "Swahili_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Karibu nchi yetu nzuri, ambapo mila za kale zinakutana na maisha ya kisasa."
+      },
+      {
+        "filename": "Swahili_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Hali ya hewa ni nzuri leo, na watu wanafurahia muda wao nje."
+      },
+      {
+        "filename": "Swahili_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Hali ya hewa ni nzuri leo, na watu wanafurahia muda wao nje."
+      }
+    ]
+  },
+  {
+    "name": "Arabic",
+    "code": "ar-XA",
+    "location": [
+      24.7136,
+      46.6753
+    ],
+    "audio_files": [
+      {
+        "filename": "Arabic_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "مرحباً بكم في بلدنا الجميل، حيث تلتقي التقاليد القديمة بالحياة الحديثة."
+      },
+      {
+        "filename": "Arabic_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "مرحباً بكم في بلدنا الجميل، حيث تلتقي التقاليد القديمة بالحياة الحديثة."
+      },
+      {
+        "filename": "Arabic_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "الطقس جميل اليوم، والناس يستمتعون بوقتهم في الخارج."
+      },
+      {
+        "filename": "Arabic_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "الطقس جميل اليوم، والناس يستمتعون بوقتهم في الخارج."
+      }
+    ]
+  },
+  {
+    "name": "Amharic",
+    "code": "am-ET",
+    "location": [
+      9.032,
+      38.7469
+    ],
+    "audio_files": [
+      {
+        "filename": "Amharic_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "ወደ ውብ አገራችን እንኳን ደህና መጡ፣ የጥንት ባህሎች ዘመናዊ ህይወትን የሚያገናኙበት።"
+      },
+      {
+        "filename": "Amharic_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "ወደ ውብ አገራችን እንኳን ደህና መጡ፣ የጥንት ባህሎች ዘመናዊ ህይወትን የሚያገናኙበት።"
+      },
+      {
+        "filename": "Amharic_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "ዛሬ የአየር ሁኔታ በጣም ቆንጆ ነው፣ እና ሰዎች ውጭ ጊዜያቸውን እያደረጉ ነው።"
+      },
+      {
+        "filename": "Amharic_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "ዛሬ የአየር ሁኔታ በጣም ቆንጆ ነው፣ እና ሰዎች ውጭ ጊዜያቸውን እያደረጉ ነው።"
+      }
+    ]
+  },
+  {
+    "name": "Tagalog",
+    "code": "fil-PH",
+    "location": [
+      14.5995,
+      120.9842
+    ],
+    "audio_files": [
+      {
+        "filename": "Tagalog_male_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "male",
+        "text": "Maligayang pagdating sa aming magandang bansa, kung saan nagsasama ang sinaunang tradisyon at modernong buhay."
+      },
+      {
+        "filename": "Tagalog_female_phrase1.mp3",
+        "phrase_number": 1,
+        "gender": "female",
+        "text": "Maligayang pagdating sa aming magandang bansa, kung saan nagsasama ang sinaunang tradisyon at modernong buhay."
+      },
+      {
+        "filename": "Tagalog_male_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "male",
+        "text": "Ang panahon ay napakaganda ngayon, at ang mga tao ay nag-eenjoy ng kanilang oras sa labas."
+      },
+      {
+        "filename": "Tagalog_female_phrase2.mp3",
+        "phrase_number": 2,
+        "gender": "female",
+        "text": "Ang panahon ay napakaganda ngayon, at ang mga tao ay nag-eenjoy ng kanilang oras sa labas."
+      }
+    ]
+  }
+]
