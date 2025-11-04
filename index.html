@@ -820,19 +820,20 @@
                     document.querySelector('.audio-section').style.display = 'none';
                     document.querySelector('.input-section').style.display = 'none';
                     document.querySelector('.attempts-label').style.display = 'none';
-                }
-
-                if (state.gameWon) {
+                    
+                    // Show result section
                     const resultSection = document.getElementById('resultSection');
-                    document.getElementById('resultEmoji').textContent = '🎉🎊';
-                    document.getElementById('resultTitle').textContent = 'Amazing!';
-                    document.getElementById('resultLanguage').textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
-                    resultSection.classList.add('visible');
-                } else if (state.gameLost) {
-                    const resultSection = document.getElementById('resultSection');
-                    document.getElementById('resultEmoji').textContent = '🤔';
-                    document.getElementById('resultTitle').textContent = 'Nice try!';
-                    document.getElementById('resultLanguage').textContent = `The answer was ${gameState.todayLanguage.name}`;
+                    
+                    if (state.gameWon) {
+                        document.getElementById('resultEmoji').textContent = '🎉🎊';
+                        document.getElementById('resultTitle').textContent = 'Amazing!';
+                        document.getElementById('resultLanguage').textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
+                    } else if (state.gameLost) {
+                        document.getElementById('resultEmoji').textContent = '🤔';
+                        document.getElementById('resultTitle').textContent = 'Nice try!';
+                        document.getElementById('resultLanguage').textContent = `The answer was ${gameState.todayLanguage.name}`;
+                    }
+                    
                     resultSection.classList.add('visible');
                 }
             }
