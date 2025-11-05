@@ -515,50 +515,94 @@
 
         // Initialize game
         async function initGame() {
+            console.log('🎮 Initializing game...');
+            
             gameState.languageData = await loadLanguageData();
-            if (!gameState.languageData) return;
+            if (!gameState.languageData) {
+                console.error('❌ Failed to load language data');
+                return;
+            }
+            
+            console.log('✅ Language data loaded:', gameState.languageData.length, 'languages');
 
             gameState.todayLanguage = selectDailyLanguage(gameState.languageData);
+            console.log('✅ Today\'s language:', gameState.todayLanguage.name);
+            
             gameState.audioFiles = gameState.todayLanguage.audio_files;
 
             loadStats();
+            console.log('✅ Stats loaded');
             
             // Check if already played today BEFORE showing content
             const today = new Date().toISOString().split('T')[0];
             const lastPlayed = localStorage.getItem('linguini_last_played');
             const savedGameState = localStorage.getItem('linguini_game_state');
             
+            console.log('📅 Today:', today);
+            console.log('📅 Last played:', lastPlayed);
+            console.log('💾 Saved game exists:', !!savedGameState);
+            
             // If game was completed today, prepare to hide gameplay elements
             let shouldHideGameplay = false;
             if (lastPlayed === today && savedGameState) {
                 const state = JSON.parse(savedGameState);
+                console.log('📊 Saved game state:', state);
                 if (state.gameWon || state.gameLost) {
                     shouldHideGameplay = true;
+                    console.log('✅ Game was completed - will hide gameplay elements');
                 }
             } else if (lastPlayed && lastPlayed !== today) {
                 // New day - clear old game state
                 localStorage.removeItem('linguini_game_state');
                 localStorage.removeItem('linguini_last_played');
-                console.log('New day! Starting fresh game.');
+                console.log('🆕 New day! Starting fresh game.');
             }
             
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('gameContent').classList.remove('hidden');
+            console.log('✅ Game content visible');
 
             // Hide gameplay elements immediately if game was completed
             if (shouldHideGameplay) {
-                document.querySelector('.audio-section').style.display = 'none';
-                document.querySelector('.input-section').style.display = 'none';
-                document.querySelector('.attempts-label').style.display = 'none';
+                console.log('🙈 Hiding gameplay elements immediately...');
+                const audioSection = document.querySelector('.audio-section');
+                const inputSection = document.querySelector('.input-section');
+                const attemptsLabel = document.querySelector('.attempts-label');
+                
+                if (audioSection) {
+                    audioSection.style.display = 'none';
+                    console.log('  ✅ Audio section hidden');
+                } else {
+                    console.error('  ❌ Audio section not found');
+                }
+                
+                if (inputSection) {
+                    inputSection.style.display = 'none';
+                    console.log('  ✅ Input section hidden');
+                } else {
+                    console.error('  ❌ Input section not found');
+                }
+                
+                if (attemptsLabel) {
+                    attemptsLabel.style.display = 'none';
+                    console.log('  ✅ Attempts label hidden');
+                } else {
+                    console.error('  ❌ Attempts label not found');
+                }
             }
 
             setupEventListeners();
+            console.log('✅ Event listeners set up');
+            
             updateStatsDisplay();
+            console.log('✅ Stats display updated');
             
             // Load saved game AFTER DOM is visible
             if (lastPlayed === today) {
-                // Same day - load saved game
+                console.log('📂 Loading saved game...');
                 loadSavedGame();
+            } else {
+                console.log('🎯 Fresh game ready to play');
             }
         }
 
@@ -821,20 +865,36 @@
         }
 
         function loadSavedGame() {
+            console.log('📂 loadSavedGame() called');
+            
             const saved = localStorage.getItem('linguini_game_state');
-            if (!saved) return;
+            if (!saved) {
+                console.log('❌ No saved game found');
+                return;
+            }
+            
+            console.log('✅ Saved game found:', saved);
             
             const state = JSON.parse(saved);
             gameState.attempts = state.attempts;
             gameState.gameWon = state.gameWon;
             gameState.gameLost = state.gameLost;
+            
+            console.log('📊 Loaded state - Attempts:', state.attempts.length, 'Won:', state.gameWon, 'Lost:', state.gameLost);
 
             updateEmojiTracker();
+            console.log('✅ Emoji tracker updated');
+            
             updateGuessHistory();
+            console.log('✅ Guess history updated');
 
             if (state.gameWon || state.gameLost) {
+                console.log('🎯 Game was completed - hiding elements and showing results');
+                
                 // Use requestAnimationFrame to ensure DOM is fully ready
                 requestAnimationFrame(() => {
+                    console.log('  🎬 requestAnimationFrame executing...');
+                    
                     // Hide gameplay elements
                     const audioSection = document.querySelector('.audio-section');
                     const inputSection = document.querySelector('.input-section');
@@ -842,11 +902,36 @@
                     const guessInput = document.getElementById('guessInput');
                     const submitButton = document.getElementById('submitButton');
                     
-                    if (audioSection) audioSection.style.display = 'none';
-                    if (inputSection) inputSection.style.display = 'none';
-                    if (attemptsLabel) attemptsLabel.style.display = 'none';
-                    if (guessInput) guessInput.disabled = true;
-                    if (submitButton) submitButton.disabled = true;
+                    if (audioSection) {
+                        audioSection.style.display = 'none';
+                        console.log('    ✅ Audio section hidden');
+                    } else {
+                        console.error('    ❌ Audio section not found!');
+                    }
+                    
+                    if (inputSection) {
+                        inputSection.style.display = 'none';
+                        console.log('    ✅ Input section hidden');
+                    } else {
+                        console.error('    ❌ Input section not found!');
+                    }
+                    
+                    if (attemptsLabel) {
+                        attemptsLabel.style.display = 'none';
+                        console.log('    ✅ Attempts label hidden');
+                    } else {
+                        console.error('    ❌ Attempts label not found!');
+                    }
+                    
+                    if (guessInput) {
+                        guessInput.disabled = true;
+                        console.log('    ✅ Guess input disabled');
+                    }
+                    
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                        console.log('    ✅ Submit button disabled');
+                    }
                     
                     // Show result section
                     const resultSection = document.getElementById('resultSection');
@@ -858,16 +943,25 @@
                         if (resultEmoji) resultEmoji.textContent = '🎉🎊';
                         if (resultTitle) resultTitle.textContent = 'Amazing!';
                         if (resultLanguage) resultLanguage.textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
+                        console.log('    ✅ Win message set');
                     } else if (state.gameLost) {
                         if (resultEmoji) resultEmoji.textContent = '🤔';
                         if (resultTitle) resultTitle.textContent = 'Nice try!';
                         if (resultLanguage) resultLanguage.textContent = `The answer was ${gameState.todayLanguage.name}`;
+                        console.log('    ✅ Lose message set');
                     }
                     
-                    if (resultSection) resultSection.classList.add('visible');
+                    if (resultSection) {
+                        resultSection.classList.add('visible');
+                        console.log('    ✅ Result section shown');
+                    } else {
+                        console.error('    ❌ Result section not found!');
+                    }
                     
-                    console.log('Loaded saved game - elements hidden, results shown');
+                    console.log('✅ Loaded saved game - elements hidden, results shown');
                 });
+            } else {
+                console.log('⏳ Game in progress - showing gameplay elements');
             }
         }
 
