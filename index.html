@@ -790,6 +790,10 @@
             document.getElementById('resultTitle').textContent = 'Amazing!';
             document.getElementById('resultLanguage').textContent = `You guessed ${gameState.todayLanguage.name} in ${gameState.attempts.length} tries!`;
             resultSection.classList.add('visible');
+            
+            // IMPORTANT: Save the game state so refresh works properly
+            saveGame();
+            console.log('✅ Game won and saved!');
         }
 
         // Lose game
@@ -812,6 +816,10 @@
             document.getElementById('resultTitle').textContent = 'Nice try!';
             document.getElementById('resultLanguage').textContent = `The answer was ${gameState.todayLanguage.name}`;
             resultSection.classList.add('visible');
+            
+            // IMPORTANT: Save the game state so refresh works properly
+            saveGame();
+            console.log('✅ Game lost and saved!');
         }
 
         // Share results
