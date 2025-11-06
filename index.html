@@ -524,9 +524,24 @@
 
         // Select daily language
         function selectDailyLanguage(languages) {
-            const today = new Date().toISOString().split('T')[0];
-            const seed = parseInt(today.replace(/-/g, ''));
-            return languages[seed % languages.length];
+            // ⚙️ SET YOUR LAUNCH DATE HERE:
+            // Change this to the day you want to start from Language #1
+            // Format: 'YYYY-MM-DD' (year-month-day)
+            const launchDate = new Date('2025-11-06'); // 🚀 Official launch day!
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate day calculation
+            
+            // Calculate days since launch
+            const daysSinceLaunch = Math.floor((today - launchDate) / (1000 * 60 * 60 * 24));
+            
+            // If before launch date, show first language
+            const daysIndex = daysSinceLaunch < 0 ? 0 : daysSinceLaunch;
+            
+            // Use days since launch to select language (loops back to start after all languages used)
+            const index = daysIndex % languages.length;
+            
+            return languages[index];
         }
 
         // Initialize game
