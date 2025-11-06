@@ -461,7 +461,11 @@
                 <div class="result-emoji-display" id="resultEmoji"></div>
                 <div class="result-title" id="resultTitle"></div>
                 <div class="result-language" id="resultLanguage"></div>
-                <button class="share-button" id="shareButton">📋 Share Results</button>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; border-radius: 12px; margin: 20px 0; text-align: center;">
+                    <p style="font-size: 16px; font-weight: bold; margin-bottom: 8px;">🌅 Come back tomorrow!</p>
+                    <p style="font-size: 14px; opacity: 0.95;">A new language challenge awaits you every day</p>
+                </div>
+                <button class="share-button" id="shareBtn">📋 Share Results</button>
             </div>
 
             <footer style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef; text-align: center;">
@@ -584,7 +588,7 @@
                 if (e.key === 'Enter') submitGuess();
             });
             document.getElementById('guessInput').addEventListener('input', handleAutocomplete);
-            document.getElementById('shareButton').addEventListener('click', shareResults);
+            document.getElementById('shareBtn').addEventListener('click', shareResults);
         }
 
         // Play audio
@@ -792,7 +796,7 @@
         function shareResults() {
             const emojis = gameState.attempts.map(a => a.emoji).join('');
             const result = gameState.gameWon ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
-            const text = `Linguini 🌍\n${result}\n${emojis}`;
+            const text = `Linguini 🌍\n${result}\n${emojis}\n\nPlay at Voiz.me`;
 
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text);
