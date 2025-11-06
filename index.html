@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4LHMLJVFGY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4LHMLJVFGY');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linguini - Daily Language Challenge</title>
@@ -365,21 +354,24 @@
         }
 
         .share-button {
-            background: linear-gradient(135deg, #48c774 0%, #3ec46d 100%);
             color: white;
             border: none;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 12px rgba(72, 199, 116, 0.4);
+            transition: transform 0.2s, opacity 0.2s;
+            min-width: 90px;
         }
 
         .share-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(72, 199, 116, 0.6);
+            opacity: 0.9;
+        }
+
+        .share-button:active {
+            transform: translateY(0);
         }
 
         .message-box {
@@ -476,7 +468,24 @@
                     <p style="font-size: 16px; font-weight: bold; margin-bottom: 8px;">🌅 Come back tomorrow!</p>
                     <p style="font-size: 14px; opacity: 0.95;">A new language challenge awaits you every day</p>
                 </div>
-                <button class="share-button" id="shareBtn">📋 Share Results</button>
+                
+                <div style="text-align: center; margin-bottom: 12px;">
+                    <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Share your results:</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button class="share-button" id="copyBtn" style="background: #6aaa64;">
+                            📋 Copy
+                        </button>
+                        <button class="share-button" id="twitterBtn" style="background: #1DA1F2;">
+                            🐦 Twitter
+                        </button>
+                        <button class="share-button" id="facebookBtn" style="background: #4267B2;">
+                            📘 Facebook
+                        </button>
+                        <button class="share-button" id="whatsappBtn" style="background: #25D366;">
+                            💬 WhatsApp
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <footer style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef; text-align: center;">
@@ -614,7 +623,12 @@
                 if (e.key === 'Enter') submitGuess();
             });
             document.getElementById('guessInput').addEventListener('input', handleAutocomplete);
-            document.getElementById('shareBtn').addEventListener('click', shareResults);
+            
+            // Share buttons
+            document.getElementById('copyBtn').addEventListener('click', copyToClipboard);
+            document.getElementById('twitterBtn').addEventListener('click', shareToTwitter);
+            document.getElementById('facebookBtn').addEventListener('click', shareToFacebook);
+            document.getElementById('whatsappBtn').addEventListener('click', shareToWhatsApp);
         }
 
         // Play audio
@@ -818,18 +832,43 @@
             saveGame();
         }
 
-        // Share results
-        function shareResults() {
+        // Generate share text
+        function generateShareText() {
             const emojis = gameState.attempts.map(a => a.emoji).join('');
             const result = gameState.gameWon ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
-            const text = `Linguini 🌍\n${result}\n${emojis}\n\nPlay at Voiz.me`;
+            return `Linguini 🌍\n${result}\n${emojis}\n\nPlay at Voiz.me`;
+        }
 
+        // Copy to clipboard
+        function copyToClipboard() {
+            const text = generateShareText();
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text);
-                showMessage('Copied to clipboard!');
+                showMessage('✅ Copied to clipboard!');
             } else {
                 alert(text);
             }
+        }
+
+        // Share to Twitter
+        function shareToTwitter() {
+            const text = generateShareText();
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank', 'width=550,height=420');
+        }
+
+        // Share to Facebook
+        function shareToFacebook() {
+            const url = 'https://voiz.me'; // Your game URL
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(generateShareText())}`;
+            window.open(facebookUrl, '_blank', 'width=550,height=420');
+        }
+
+        // Share to WhatsApp
+        function shareToWhatsApp() {
+            const text = generateShareText();
+            const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
         }
 
         // Show message
