@@ -484,6 +484,9 @@
                         <button class="share-button" id="whatsappBtn" style="background: #25D366;">
                             💬 WhatsApp
                         </button>
+                        <button class="share-button" id="telegramBtn" style="background: #0088cc;">
+                            ✈️ Telegram
+                        </button>
                     </div>
                 </div>
             </div>
@@ -629,6 +632,7 @@
             document.getElementById('twitterBtn').addEventListener('click', shareToTwitter);
             document.getElementById('facebookBtn').addEventListener('click', shareToFacebook);
             document.getElementById('whatsappBtn').addEventListener('click', shareToWhatsApp);
+            document.getElementById('telegramBtn').addEventListener('click', shareToTelegram);
         }
 
         // Play audio
@@ -857,17 +861,102 @@
             window.open(url, '_blank', 'width=550,height=420');
         }
 
-        // Share to Facebook
+        // Share to Facebook (copy + instructions)
         function shareToFacebook() {
-            const url = 'https://voiz.me'; // Your game URL
-            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(generateShareText())}`;
-            window.open(facebookUrl, '_blank', 'width=550,height=420');
+            const text = generateShareText();
+            const textWithLink = `${text}\n\nhttps://voiz.me`;
+            
+            // Copy to clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textWithLink).then(() => {
+                    // Show instructions modal
+                    showFacebookInstructions();
+                });
+            } else {
+                // Fallback for older browsers
+                alert(textWithLink + '\n\nCopied! Now paste this on Facebook.');
+            }
+        }
+
+        // Show Facebook sharing instructions
+        function showFacebookInstructions() {
+            // Create modal overlay
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                animation: fadeIn 0.3s;
+            `;
+            
+            modal.innerHTML = `
+                <div style="
+                    background: white;
+                    border-radius: 16px;
+                    padding: 30px;
+                    max-width: 400px;
+                    margin: 20px;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                ">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div style="font-size: 50px; margin-bottom: 10px;">📘</div>
+                        <h3 style="color: #333; margin-bottom: 10px; font-size: 20px;">Share on Facebook</h3>
+                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">
+                            ✅ Your results have been copied!
+                        </p>
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <p style="color: #333; font-size: 14px; line-height: 1.6; margin: 0;">
+                            <strong>Next steps:</strong><br>
+                            1. Go to Facebook<br>
+                            2. Create a new post<br>
+                            3. Paste (Ctrl+V or Cmd+V)<br>
+                            4. Click Post! 🎉
+                        </p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="window.open('https://www.facebook.com', '_blank'); this.parentElement.parentElement.parentElement.remove();" 
+                                style="flex: 1; background: #4267B2; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">
+                            Open Facebook
+                        </button>
+                        <button onclick="this.parentElement.parentElement.parentElement.remove();" 
+                                style="flex: 1; background: #e9ecef; color: #333; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Close on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+            
+            document.body.appendChild(modal);
         }
 
         // Share to WhatsApp
         function shareToWhatsApp() {
             const text = generateShareText();
             const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+
+        // Share to Telegram
+        function shareToTelegram() {
+            const text = generateShareText();
+            const url = `https://t.me/share/url?url=${encodeURIComponent('https://voiz.me')}&text=${encodeURIComponent(text)}`;
             window.open(url, '_blank');
         }
 
